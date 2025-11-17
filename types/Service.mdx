@@ -1,0 +1,139 @@
+---
+$id: https://services.org.ai/Service
+$context: https://schema.org.ai
+$type: Type
+name: Service
+description: A service is an intangible product that is offered by one party to another in exchange for money or value
+extends: https://schema.org/Service
+digital: 0.7
+category: CoreType
+---
+
+[Thing](https://schema.org.ai/Thing) > Service
+
+# Service
+
+A service is an intangible product that is offered by one party to another in exchange for money or value. This is the base type for all service types in the services.org.ai ontology.
+
+## Properties
+
+| Property | Type | Description | Inherited From |
+|----------|------|-------------|----------------|
+| name | Text | The name of the service | Thing |
+| description | Text | A description of the service | Thing |
+| image | URL | An image representing the service | Thing |
+| url | URL | URL of the service | Thing |
+| provider | Organization \| Person | The service provider | Service |
+| serviceType | Text \| GovernmentBenefitsType | The type of service | Service |
+| areaServed | Place \| GeoShape | The geographic area where the service is provided | Service |
+| availableChannel | ServiceChannel | How the service can be accessed | Service |
+| category | Text \| Thing | Category of the service | Service |
+| hoursAvailable | OpeningHoursSpecification | Hours the service is available | Service |
+| offers | Offer | An offer to provide the service | Service |
+| termsOfService | URL \| Text | Terms of service for using the service | Service |
+| serviceOutput | Thing | The output of the service | Service |
+| produces | Thing | What the service produces | Service |
+
+## Extended Properties
+
+This ontology extends Schema.org Service with additional classification properties:
+
+| Property | Type | Description |
+|----------|------|-------------|
+| naics | NAICSClassification | NAICS industry classification |
+| unspsc | Text | UNSPSC service code |
+| wikidata | URL | Wikidata QID reference |
+| wikipedia | URL | Wikipedia article URL |
+| digital | Number | Digital service score (0.0-1.0) |
+| deliveryMethod | Text | How the service is delivered (in-person, remote, hybrid) |
+| industryVertical | Text | Primary industry vertical |
+
+## Classification
+
+Services in this ontology are classified using multiple authoritative systems:
+
+- **NAICS** - North American Industry Classification System (6-digit codes)
+- **UNSPSC** - United Nations Standard Products and Services Code
+- **Wikidata** - Semantic knowledge graph references
+- **Wikipedia** - Human-readable documentation
+
+## Examples
+
+```typescript
+import { $ } from '@org.ai/services'
+
+// Create a basic service
+const consulting = $.Service.create({
+  name: 'Business Consulting',
+  description: 'Strategic business consulting services',
+  provider: 'Acme Consulting Inc.',
+  serviceType: 'Professional Service',
+  areaServed: 'United States',
+  digital: 0.6
+})
+
+// Create a service with classification
+const programming = $.Service.create({
+  name: 'Custom Computer Programming',
+  description: 'Writing, modifying, testing, and supporting software to meet customer needs',
+  provider: 'Tech Solutions LLC',
+  naics: {
+    code: '541511',
+    title: 'Custom Computer Programming Services',
+    sector: '54',
+    sectorName: 'Professional, Scientific, and Technical Services',
+    subsector: '541',
+    industryGroup: '5415',
+    industryGroupName: 'Computer Systems Design and Related Services'
+  },
+  unspsc: '80111700',
+  wikidata: 'https://www.wikidata.org/wiki/Q21198342',
+  wikipedia: 'https://en.wikipedia.org/wiki/Custom_software',
+  digital: 1.0,
+  deliveryMethod: 'remote'
+})
+
+// Create a service with availability
+const restaurant = $.Service.create({
+  name: 'Fine Dining Restaurant Service',
+  description: 'Full-service restaurant with table service',
+  provider: 'The French Laundry',
+  serviceType: 'Food Service',
+  areaServed: 'Yountville, CA',
+  hoursAvailable: {
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+    opens: '17:30',
+    closes: '21:00'
+  },
+  naics: {
+    code: '722511',
+    title: 'Full-Service Restaurants',
+    sector: '72',
+    sectorName: 'Accommodation and Food Services'
+  },
+  digital: 0.2,
+  deliveryMethod: 'in-person'
+})
+```
+
+## Subtypes
+
+Service has numerous subtypes organized by NAICS sectors:
+
+- **Professional Services** - Consulting, legal, accounting, etc.
+- **Technical Services** - IT, engineering, architecture, etc.
+- **Healthcare Services** - Medical, dental, mental health, etc.
+- **Educational Services** - Schools, training, tutoring, etc.
+- **Financial Services** - Banking, insurance, investment, etc.
+- **Hospitality Services** - Hotels, restaurants, entertainment, etc.
+- **Transportation Services** - Shipping, passenger transport, etc.
+- **Repair Services** - Maintenance and repair of products
+- **Personal Services** - Hair salons, dry cleaning, etc.
+- **Creative Services** - Design, marketing, advertising, etc.
+
+## Resources
+
+- [Schema.org Service](https://schema.org/Service)
+- [NAICS Classification](https://www.census.gov/naics/)
+- [UNSPSC](https://www.ungm.org/public/unspsc)
+- [Wikidata Service (Q7406919)](https://www.wikidata.org/wiki/Q7406919)

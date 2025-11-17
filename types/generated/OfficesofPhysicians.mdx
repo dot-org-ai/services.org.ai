@@ -1,0 +1,93 @@
+---
+$id: https://services.org.ai/offices-of-physicians
+$context: https://schema.org.ai
+$type: Service
+name: Offices of Physicians
+description: Medical care services provided by licensed physicians in private practice
+naics:
+  code: "621111"
+  title: "Offices of Physicians (except Mental Health Specialists)"
+  sector: "62"
+  sectorName: "Health Care and Social Assistance"
+  subsector: "621"
+  industryGroup: "6211"
+  industryGroupName: "Offices of Physicians"
+unspsc: "85121600"
+wikidata: https://www.wikidata.org/wiki/Q39631
+wikipedia: https://en.wikipedia.org/wiki/Physician
+digital: 0.5
+category: Service
+serviceType: Healthcare Service
+---
+
+[Thing](https://schema.org.ai/Thing) > [Service](../Service.mdx) > Health Care and Social Assistance
+
+# Offices of Physicians
+
+Medical care services provided by licensed physicians in private practice
+
+## Properties
+
+| Property | Type | Description | Inherited From |
+|----------|------|-------------|----------------|
+| name | Text | The name of the service | Thing |
+| description | Text | A description of the service | Thing |
+| provider | Organization \| Person | The service provider | Service |
+| serviceType | Text | The type of service | Service |
+| areaServed | Place \| GeoShape | Geographic area served | Service |
+| category | Text \| Thing | Category of the service | Service |
+| hoursAvailable | OpeningHoursSpecification | Service hours | Service |
+| offers | Offer | Service offer details | Service |
+| availableChannel | ServiceChannel | How to access the service | Service |
+
+## Classification
+
+- **NAICS**: 621111 (Health Care and Social Assistance > Offices of Physicians > Offices of Physicians (except Mental Health Specialists))
+- **UNSPSC**: 85121600
+- **Wikidata**: [Q39631](https://www.wikidata.org/wiki/Q39631)
+- **Wikipedia**: [Offices of Physicians](https://en.wikipedia.org/wiki/Physician)
+
+## Examples
+
+```typescript
+import { $ } from 'services.org.ai'
+
+// Create a basic service
+const officesofPhysicians = $.OfficesofPhysicians.create({
+  name: 'Example Offices of Physicians',
+  description: 'Medical care services provided by licensed physicians in private practice',
+  provider: 'Example Company',
+  serviceType: 'Healthcare Service',
+  areaServed: 'United States'
+})
+
+// With additional properties
+const detailedOfficesofPhysicians = $.OfficesofPhysicians.create({
+  name: 'Premium Offices of Physicians',
+  description: 'Premium service with enhanced features',
+  provider: {
+    name: 'Premium Service Provider',
+    type: 'Organization'
+  },
+  serviceType: 'Healthcare Service',
+  areaServed: {
+    name: 'San Francisco Bay Area',
+    type: 'Place'
+  },
+  hoursAvailable: {
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00'
+  }
+})
+
+// Query services
+const allServices = $.OfficesofPhysicians.find()
+```
+
+## Resources
+
+- [Schema.org Service](https://schema.org/Service)
+- [NAICS 621111](https://www.census.gov/naics/?input=621111)
+- [Wikidata: Offices of Physicians (Q39631)](https://www.wikidata.org/wiki/Q39631)
+- [Wikipedia: Offices of Physicians](https://en.wikipedia.org/wiki/Physician)

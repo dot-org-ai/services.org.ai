@@ -1,0 +1,93 @@
+---
+$id: https://services.org.ai/custom-computer-programming-services
+$context: https://schema.org.ai
+$type: Service
+name: Custom Computer Programming Services
+description: Writing, modifying, testing, and supporting software to meet the needs of a particular customer
+naics:
+  code: "541511"
+  title: "Custom Computer Programming Services"
+  sector: "54"
+  sectorName: "Professional, Scientific, and Technical Services"
+  subsector: "541"
+  industryGroup: "5415"
+  industryGroupName: "Computer Systems Design and Related Services"
+unspsc: "80111700"
+wikidata: https://www.wikidata.org/wiki/Q21198342
+wikipedia: https://en.wikipedia.org/wiki/Custom_software
+digital: 1
+category: Service
+serviceType: Professional Service
+---
+
+[Thing](https://schema.org.ai/Thing) > [Service](../Service.mdx) > Professional, Scientific, and Technical Services
+
+# Custom Computer Programming Services
+
+Writing, modifying, testing, and supporting software to meet the needs of a particular customer
+
+## Properties
+
+| Property | Type | Description | Inherited From |
+|----------|------|-------------|----------------|
+| name | Text | The name of the service | Thing |
+| description | Text | A description of the service | Thing |
+| provider | Organization \| Person | The service provider | Service |
+| serviceType | Text | The type of service | Service |
+| areaServed | Place \| GeoShape | Geographic area served | Service |
+| category | Text \| Thing | Category of the service | Service |
+| hoursAvailable | OpeningHoursSpecification | Service hours | Service |
+| offers | Offer | Service offer details | Service |
+| availableChannel | ServiceChannel | How to access the service | Service |
+
+## Classification
+
+- **NAICS**: 541511 (Professional, Scientific, and Technical Services > Computer Systems Design and Related Services > Custom Computer Programming Services)
+- **UNSPSC**: 80111700
+- **Wikidata**: [Q21198342](https://www.wikidata.org/wiki/Q21198342)
+- **Wikipedia**: [Custom Computer Programming Services](https://en.wikipedia.org/wiki/Custom_software)
+
+## Examples
+
+```typescript
+import { $ } from 'services.org.ai'
+
+// Create a basic service
+const customComputerProgrammingServices = $.CustomComputerProgrammingServices.create({
+  name: 'Example Custom Computer Programming Services',
+  description: 'Writing, modifying, testing, and supporting software to meet the needs of a particular customer',
+  provider: 'Example Company',
+  serviceType: 'Professional Service',
+  areaServed: 'United States'
+})
+
+// With additional properties
+const detailedCustomComputerProgrammingServices = $.CustomComputerProgrammingServices.create({
+  name: 'Premium Custom Computer Programming Services',
+  description: 'Premium service with enhanced features',
+  provider: {
+    name: 'Premium Service Provider',
+    type: 'Organization'
+  },
+  serviceType: 'Professional Service',
+  areaServed: {
+    name: 'San Francisco Bay Area',
+    type: 'Place'
+  },
+  hoursAvailable: {
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00'
+  }
+})
+
+// Query services
+const allServices = $.CustomComputerProgrammingServices.find()
+```
+
+## Resources
+
+- [Schema.org Service](https://schema.org/Service)
+- [NAICS 541511](https://www.census.gov/naics/?input=541511)
+- [Wikidata: Custom Computer Programming Services (Q21198342)](https://www.wikidata.org/wiki/Q21198342)
+- [Wikipedia: Custom Computer Programming Services](https://en.wikipedia.org/wiki/Custom_software)

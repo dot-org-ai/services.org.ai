@@ -1,0 +1,93 @@
+---
+$id: https://services.org.ai/full-service-restaurants
+$context: https://schema.org.ai
+$type: Service
+name: Full-Service Restaurants
+description: Providing food services to patrons who order and are served while seated and pay after eating
+naics:
+  code: "722511"
+  title: "Full-Service Restaurants"
+  sector: "72"
+  sectorName: "Accommodation and Food Services"
+  subsector: "722"
+  industryGroup: "7225"
+  industryGroupName: "Restaurants and Other Eating Places"
+unspsc: "90101501"
+wikidata: https://www.wikidata.org/wiki/Q11707
+wikipedia: https://en.wikipedia.org/wiki/Restaurant
+digital: 0.3
+category: Service
+serviceType: Hospitality Service
+---
+
+[Thing](https://schema.org.ai/Thing) > [Service](../Service.mdx) > Accommodation and Food Services
+
+# Full-Service Restaurants
+
+Providing food services to patrons who order and are served while seated and pay after eating
+
+## Properties
+
+| Property | Type | Description | Inherited From |
+|----------|------|-------------|----------------|
+| name | Text | The name of the service | Thing |
+| description | Text | A description of the service | Thing |
+| provider | Organization \| Person | The service provider | Service |
+| serviceType | Text | The type of service | Service |
+| areaServed | Place \| GeoShape | Geographic area served | Service |
+| category | Text \| Thing | Category of the service | Service |
+| hoursAvailable | OpeningHoursSpecification | Service hours | Service |
+| offers | Offer | Service offer details | Service |
+| availableChannel | ServiceChannel | How to access the service | Service |
+
+## Classification
+
+- **NAICS**: 722511 (Accommodation and Food Services > Restaurants and Other Eating Places > Full-Service Restaurants)
+- **UNSPSC**: 90101501
+- **Wikidata**: [Q11707](https://www.wikidata.org/wiki/Q11707)
+- **Wikipedia**: [Full-Service Restaurants](https://en.wikipedia.org/wiki/Restaurant)
+
+## Examples
+
+```typescript
+import { $ } from 'services.org.ai'
+
+// Create a basic service
+const full-ServiceRestaurants = $.Full-ServiceRestaurants.create({
+  name: 'Example Full-Service Restaurants',
+  description: 'Providing food services to patrons who order and are served while seated and pay after eating',
+  provider: 'Example Company',
+  serviceType: 'Hospitality Service',
+  areaServed: 'United States'
+})
+
+// With additional properties
+const detailedFull-ServiceRestaurants = $.Full-ServiceRestaurants.create({
+  name: 'Premium Full-Service Restaurants',
+  description: 'Premium service with enhanced features',
+  provider: {
+    name: 'Premium Service Provider',
+    type: 'Organization'
+  },
+  serviceType: 'Hospitality Service',
+  areaServed: {
+    name: 'San Francisco Bay Area',
+    type: 'Place'
+  },
+  hoursAvailable: {
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00'
+  }
+})
+
+// Query services
+const allServices = $.Full-ServiceRestaurants.find()
+```
+
+## Resources
+
+- [Schema.org Service](https://schema.org/Service)
+- [NAICS 722511](https://www.census.gov/naics/?input=722511)
+- [Wikidata: Full-Service Restaurants (Q11707)](https://www.wikidata.org/wiki/Q11707)
+- [Wikipedia: Full-Service Restaurants](https://en.wikipedia.org/wiki/Restaurant)

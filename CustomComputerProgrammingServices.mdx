@@ -1,0 +1,135 @@
+---
+title: Custom Computer Programming Services
+description: Writing, modifying, testing, and supporting software to meet the needs of a particular customer
+---
+
+import { Breadcrumb, BreadcrumbItem } from 'fumadocs-ui/components/breadcrumb'
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
+import { Callout } from 'fumadocs-ui/components/callout'
+
+<Breadcrumb>
+  <BreadcrumbItem href="/">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/ProfessionalServices">Professional Services</BreadcrumbItem>
+  <BreadcrumbItem href="/ComputerServices">Computer Services</BreadcrumbItem>
+  <BreadcrumbItem>Custom Computer Programming Services</BreadcrumbItem>
+</Breadcrumb>
+
+# Custom Computer Programming Services
+
+Writing, modifying, testing, and supporting software to meet the needs of a particular customer
+
+## Classification
+
+<Tabs items={['NAICS', 'UNSPSC', 'Wikidata']}>
+  <Tab value="NAICS">
+    - **Code**: 541511
+    - **Title**: Custom Computer Programming Services
+    - **Sector**: 54 - Professional, Scientific, and Technical Services
+    - **Subsector**: 541
+    - **Industry Group**: 5415 - Computer Systems Design and Related Services
+  </Tab>
+  <Tab value="UNSPSC">
+    **Code**: 80111700
+  </Tab>
+  <Tab value="Wikidata">
+    - **QID**: [Q21198342](https://www.wikidata.org/wiki/Q21198342)
+    - **Wikipedia**: [Custom Computer Programming Services](https://en.wikipedia.org/wiki/Custom_software)
+  </Tab>
+</Tabs>
+
+## Properties
+
+| Property | Type | Description | Required |
+|----------|------|-------------|----------|
+| name | string | Service name | Yes |
+| description | string | Service description | No |
+| provider | string \| Organization \| Person | Service provider | No |
+| serviceType | string | Type of service | No |
+| areaServed | string \| Place | Geographic area | No |
+| category | string | Service category | No |
+| hoursAvailable | OpeningHoursSpecification | Service hours | No |
+| offers | Offer | Service pricing | No |
+| availableChannel | ServiceChannel | Access channels | No |
+
+## Usage
+
+<Tabs items={['TypeScript', 'JavaScript', 'JSON-LD']}>
+  <Tab value="TypeScript">
+    ```typescript
+    import { $ } from 'services.org.ai'
+
+    // Create a basic service
+    const customComputerProgrammingServices = $.CustomComputerProgrammingServices.create({
+      name: 'Example Custom Computer Programming Services',
+      description: 'Writing, modifying, testing, and supporting software to meet the needs of a particular customer',
+      provider: 'Example Company',
+      serviceType: 'Professional Service',
+      areaServed: 'United States'
+    })
+
+    // With additional properties
+    const detailedCustomComputerProgrammingServices = $.CustomComputerProgrammingServices.create({
+      name: 'Premium Custom Computer Programming Services',
+      description: 'Premium service with enhanced features',
+      provider: {
+        name: 'Premium Service Provider',
+        type: 'Organization'
+      },
+      serviceType: 'Professional Service',
+      areaServed: {
+        name: 'San Francisco Bay Area',
+        type: 'Place'
+      },
+      hoursAvailable: {
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '17:00'
+      }
+    })
+
+    // Query services
+    const allServices = $.CustomComputerProgrammingServices.find()
+    ```
+  </Tab>
+  <Tab value="JavaScript">
+    ```javascript
+    const { $ } = require('services.org.ai')
+
+    const customComputerProgrammingServices = $.CustomComputerProgrammingServices.create({
+      name: 'Example Custom Computer Programming Services',
+      provider: 'Example Company'
+    })
+    ```
+  </Tab>
+  <Tab value="JSON-LD">
+    ```json
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Example Custom Computer Programming Services",
+      "description": "Writing, modifying, testing, and supporting software to meet the needs of a particular customer",
+      "provider": {
+        "@type": "Organization",
+        "name": "Example Company"
+      },
+      "serviceType": "Professional Service"
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Digital Score
+
+<Callout type="info">
+  **Digital Score**: 1 / 1.0
+
+  This service has a high digital delivery score, indicating primarily digital/remote delivery.
+</Callout>
+
+## Resources
+
+- [Schema.org Service](https://schema.org/Service)
+- [NAICS 541511](https://www.census.gov/naics/?input=541511)
+- [Wikidata: Custom Computer Programming Services (Q21198342)](https://www.wikidata.org/wiki/Q21198342)
+- [Wikipedia: Custom Computer Programming Services](https://en.wikipedia.org/wiki/Custom_software)
+- [UNSPSC Code 80111700](https://www.ungm.org/public/unspsc)

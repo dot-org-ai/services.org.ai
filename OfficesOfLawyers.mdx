@@ -1,0 +1,135 @@
+---
+title: Offices of Lawyers
+description: Legal advice and representation in civil and criminal legal matters and other legal services
+---
+
+import { Breadcrumb, BreadcrumbItem } from 'fumadocs-ui/components/breadcrumb'
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
+import { Callout } from 'fumadocs-ui/components/callout'
+
+<Breadcrumb>
+  <BreadcrumbItem href="/">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/ProfessionalServices">Professional Services</BreadcrumbItem>
+  <BreadcrumbItem href="/LegalServices">Legal Services</BreadcrumbItem>
+  <BreadcrumbItem>Offices of Lawyers</BreadcrumbItem>
+</Breadcrumb>
+
+# Offices of Lawyers
+
+Legal advice and representation in civil and criminal legal matters and other legal services
+
+## Classification
+
+<Tabs items={['NAICS', 'UNSPSC', 'Wikidata']}>
+  <Tab value="NAICS">
+    - **Code**: 541110
+    - **Title**: Offices of Lawyers
+    - **Sector**: 54 - Professional, Scientific, and Technical Services
+    - **Subsector**: 541
+    - **Industry Group**: 5411 - Legal Services
+  </Tab>
+  <Tab value="UNSPSC">
+    **Code**: 80121500
+  </Tab>
+  <Tab value="Wikidata">
+    - **QID**: [Q40348](https://www.wikidata.org/wiki/Q40348)
+    - **Wikipedia**: [Offices of Lawyers](https://en.wikipedia.org/wiki/Lawyer)
+  </Tab>
+</Tabs>
+
+## Properties
+
+| Property | Type | Description | Required |
+|----------|------|-------------|----------|
+| name | string | Service name | Yes |
+| description | string | Service description | No |
+| provider | string \| Organization \| Person | Service provider | No |
+| serviceType | string | Type of service | No |
+| areaServed | string \| Place | Geographic area | No |
+| category | string | Service category | No |
+| hoursAvailable | OpeningHoursSpecification | Service hours | No |
+| offers | Offer | Service pricing | No |
+| availableChannel | ServiceChannel | Access channels | No |
+
+## Usage
+
+<Tabs items={['TypeScript', 'JavaScript', 'JSON-LD']}>
+  <Tab value="TypeScript">
+    ```typescript
+    import { $ } from 'services.org.ai'
+
+    // Create a basic service
+    const officesOfLawyers = $.OfficesOfLawyers.create({
+      name: 'Example Offices of Lawyers',
+      description: 'Legal advice and representation in civil and criminal legal matters and other legal services',
+      provider: 'Example Company',
+      serviceType: 'Professional Service',
+      areaServed: 'United States'
+    })
+
+    // With additional properties
+    const detailedOfficesOfLawyers = $.OfficesOfLawyers.create({
+      name: 'Premium Offices of Lawyers',
+      description: 'Premium service with enhanced features',
+      provider: {
+        name: 'Premium Service Provider',
+        type: 'Organization'
+      },
+      serviceType: 'Professional Service',
+      areaServed: {
+        name: 'San Francisco Bay Area',
+        type: 'Place'
+      },
+      hoursAvailable: {
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '17:00'
+      }
+    })
+
+    // Query services
+    const allServices = $.OfficesOfLawyers.find()
+    ```
+  </Tab>
+  <Tab value="JavaScript">
+    ```javascript
+    const { $ } = require('services.org.ai')
+
+    const officesOfLawyers = $.OfficesOfLawyers.create({
+      name: 'Example Offices of Lawyers',
+      provider: 'Example Company'
+    })
+    ```
+  </Tab>
+  <Tab value="JSON-LD">
+    ```json
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Example Offices of Lawyers",
+      "description": "Legal advice and representation in civil and criminal legal matters and other legal services",
+      "provider": {
+        "@type": "Organization",
+        "name": "Example Company"
+      },
+      "serviceType": "Professional Service"
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Digital Score
+
+<Callout type="info">
+  **Digital Score**: 0.6 / 1.0
+
+  This service has a medium digital delivery score, indicating hybrid delivery with digital components.
+</Callout>
+
+## Resources
+
+- [Schema.org Service](https://schema.org/Service)
+- [NAICS 541110](https://www.census.gov/naics/?input=541110)
+- [Wikidata: Offices of Lawyers (Q40348)](https://www.wikidata.org/wiki/Q40348)
+- [Wikipedia: Offices of Lawyers](https://en.wikipedia.org/wiki/Lawyer)
+- [UNSPSC Code 80121500](https://www.ungm.org/public/unspsc)

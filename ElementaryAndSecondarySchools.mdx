@@ -1,0 +1,135 @@
+---
+title: Elementary and Secondary Schools
+description: Providing academic courses and associated course work that comprise a basic preparatory education
+---
+
+import { Breadcrumb, BreadcrumbItem } from 'fumadocs-ui/components/breadcrumb'
+import { Tabs, Tab } from 'fumadocs-ui/components/tabs'
+import { Callout } from 'fumadocs-ui/components/callout'
+
+<Breadcrumb>
+  <BreadcrumbItem href="/">Home</BreadcrumbItem>
+  <BreadcrumbItem href="/EducationalServices">Educational Services</BreadcrumbItem>
+  <BreadcrumbItem href="/Schools">Schools</BreadcrumbItem>
+  <BreadcrumbItem>Elementary and Secondary Schools</BreadcrumbItem>
+</Breadcrumb>
+
+# Elementary and Secondary Schools
+
+Providing academic courses and associated course work that comprise a basic preparatory education
+
+## Classification
+
+<Tabs items={['NAICS', 'UNSPSC', 'Wikidata']}>
+  <Tab value="NAICS">
+    - **Code**: 611110
+    - **Title**: Elementary and Secondary Schools
+    - **Sector**: 61 - Educational Services
+    - **Subsector**: 611
+    - **Industry Group**: 6111 - Elementary and Secondary Schools
+  </Tab>
+  <Tab value="UNSPSC">
+    **Code**: 86101500
+  </Tab>
+  <Tab value="Wikidata">
+    - **QID**: [Q3914](https://www.wikidata.org/wiki/Q3914)
+    - **Wikipedia**: [Elementary and Secondary Schools](https://en.wikipedia.org/wiki/School)
+  </Tab>
+</Tabs>
+
+## Properties
+
+| Property | Type | Description | Required |
+|----------|------|-------------|----------|
+| name | string | Service name | Yes |
+| description | string | Service description | No |
+| provider | string \| Organization \| Person | Service provider | No |
+| serviceType | string | Type of service | No |
+| areaServed | string \| Place | Geographic area | No |
+| category | string | Service category | No |
+| hoursAvailable | OpeningHoursSpecification | Service hours | No |
+| offers | Offer | Service pricing | No |
+| availableChannel | ServiceChannel | Access channels | No |
+
+## Usage
+
+<Tabs items={['TypeScript', 'JavaScript', 'JSON-LD']}>
+  <Tab value="TypeScript">
+    ```typescript
+    import { $ } from 'services.org.ai'
+
+    // Create a basic service
+    const elementaryAndSecondarySchools = $.ElementaryAndSecondarySchools.create({
+      name: 'Example Elementary and Secondary Schools',
+      description: 'Providing academic courses and associated course work that comprise a basic preparatory education',
+      provider: 'Example Company',
+      serviceType: 'Educational Service',
+      areaServed: 'United States'
+    })
+
+    // With additional properties
+    const detailedElementaryAndSecondarySchools = $.ElementaryAndSecondarySchools.create({
+      name: 'Premium Elementary and Secondary Schools',
+      description: 'Premium service with enhanced features',
+      provider: {
+        name: 'Premium Service Provider',
+        type: 'Organization'
+      },
+      serviceType: 'Educational Service',
+      areaServed: {
+        name: 'San Francisco Bay Area',
+        type: 'Place'
+      },
+      hoursAvailable: {
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '17:00'
+      }
+    })
+
+    // Query services
+    const allServices = $.ElementaryAndSecondarySchools.find()
+    ```
+  </Tab>
+  <Tab value="JavaScript">
+    ```javascript
+    const { $ } = require('services.org.ai')
+
+    const elementaryAndSecondarySchools = $.ElementaryAndSecondarySchools.create({
+      name: 'Example Elementary and Secondary Schools',
+      provider: 'Example Company'
+    })
+    ```
+  </Tab>
+  <Tab value="JSON-LD">
+    ```json
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Example Elementary and Secondary Schools",
+      "description": "Providing academic courses and associated course work that comprise a basic preparatory education",
+      "provider": {
+        "@type": "Organization",
+        "name": "Example Company"
+      },
+      "serviceType": "Educational Service"
+    }
+    ```
+  </Tab>
+</Tabs>
+
+## Digital Score
+
+<Callout type="info">
+  **Digital Score**: 0.6 / 1.0
+
+  This service has a medium digital delivery score, indicating hybrid delivery with digital components.
+</Callout>
+
+## Resources
+
+- [Schema.org Service](https://schema.org/Service)
+- [NAICS 611110](https://www.census.gov/naics/?input=611110)
+- [Wikidata: Elementary and Secondary Schools (Q3914)](https://www.wikidata.org/wiki/Q3914)
+- [Wikipedia: Elementary and Secondary Schools](https://en.wikipedia.org/wiki/School)
+- [UNSPSC Code 86101500](https://www.ungm.org/public/unspsc)
